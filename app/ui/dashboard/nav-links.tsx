@@ -7,8 +7,6 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
-
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
@@ -21,8 +19,9 @@ const links = [
   { name: "Customers", href: "/dashboard/customers", icon: UserGroupIcon },
 ];
 
+import clsx from "clsx";
+
 export default function NavLinks() {
-  const pathname = usePathname();
   return (
     <>
       {links.map((link) => {
