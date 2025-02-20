@@ -12,8 +12,8 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   const currentPage = Number(searchParams.get("page")) || 1;
 
   const createPageURL = (pageNumber: number | string) => {
-    const params = new URLSearchParams(searchParams);
-    params.set("page", pageNumber.toString());
+    const params = new URLSearchParams(searchParams); //searchParamsのコピーインスタンスを作成。インスタンスにはいくつかのメソッドが使える
+    params.set("page", pageNumber.toString()); //searchParamsインスタンスのメソッドsetを使い、pageに値pageNumberをセット(page=pageNumber)
     return `${pathname}?${params.toString()}`;
   };
 
